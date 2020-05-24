@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}Contact {% endblock %}
+
+{% block content %}
+<br><br><br>
+<main class="mx-auto" style="width:450px"  id="main">
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+            <form role="form" action="" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+    </section><!-- End Contact Section -->
+</main>
+{% endblock content %}
+
+
+ 
+            
+          

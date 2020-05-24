@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load drift_chat_widget %}
+{% drift_chatwidget %}
+{% block title %}
+    Recources
+{% endblock title %}
+{% block content %}
+    <main id="main">
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-6">
+                        <br><br><br>
+                        {% for i in post %}
+                            <div class="card-body">
+                                <div class="article-metadata">
+                                    <h2>
+                                        <a class="mr-2" href="{% url 'blog-detail' i.id %}">{{ i.title }}</a>
+                                    </h2>
+                                    <h5>{{ i.author }}</h5>
+                                    <p class="text-muted">{{ i.date|date:"F d, Y" }}</p>
+                                    <p>i.tags</p>
+                                    <div class="info-box">
+
+                                        <img class="img-thumbnail" src="{{ i.image.url }}" alt="Card image cap">
+                                        <br><br>
+                                        <p class="article-content">{{ i.meta_description }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-4">
+                        <br><br><br><br><br><br><br><br>
+                        <div class="info-box mb-4">
+                            <form class="form-inline active-pink-3 active-pink-4" method='GET' action=".">
+                                <input
+                                    class="form-control form-control-sm ml-3 w-75"
+                                    type="text"
+                                    placeholder="Search"
+                                    aria-label="Search"
+                                    name = "si"
+                                    value="{{ query|escape }}"/>
+                            <input type = "submit" class = "btn btn-dark btn-sm ml-1" value = "Search"/>
+                            </form>
+                            <br>
+                            <p>Search for the Blogs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock content %}
