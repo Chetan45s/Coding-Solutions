@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'e7d%0l@@&l0i)8sj!@i8=6oow*au*qneqnyh3*xqk&(tu8f_!e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -136,7 +136,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS= True
 
 EMAIL_HOST_USER = 'info.cnteam.25@gmail.com'
-EMAIL_HOST_PASSWORD = 'team@25@%'
+EMAIL_HOST_PASSWORD = '*******'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
